@@ -3,7 +3,8 @@ Application Programming Interface
 
 Création d'une API
 
-## Outils
+## Outils
+
 - Python
 - FastAPI
 - Uvicorn
@@ -42,3 +43,12 @@ def read_root():
 def read_item(item_id: int, q: str = None):
     return {"item_id": item_id, "q": q}
 ```
+
+## Exécution
+
+Démarrer le serveur
+```
+uvicorn main:app --reload
+```
+et visiter l'adresse http://127.0.0.1:8000/ dans le navigateur.
+
