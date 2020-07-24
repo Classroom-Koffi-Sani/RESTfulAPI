@@ -24,5 +24,6 @@ class Company(Base):
     name = Column(String, index=True)
     address = Column(String)
     phone_1 = Column(String)
+    email = Column(String)
 
     employees = relationship("Contact", back_populates="company")

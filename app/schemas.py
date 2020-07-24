@@ -7,14 +7,13 @@ class ContactBase(BaseModel):
     lastname: Optional[str] = None
     email: Optional[str] = None
     phone_1: Optional[str] = None
+    company_id: Optional[int] = None
 
 class ContactCreate(ContactBase):
     pass
 
 class Contact(ContactBase):
     id: int
-    company_id: int
-    employees: List[Contact] = []
 
     class Config:
         orm_mode = True
@@ -28,6 +27,7 @@ class CompanyCreate(BaseModel):
 
 class Company(CompanyBase):
     id: int
+    employees: List[Contact] = []
     
     class Config:
         orm_mode = True
