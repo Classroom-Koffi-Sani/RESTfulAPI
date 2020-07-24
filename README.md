@@ -8,7 +8,7 @@ Création d'une API
 - Python
 - FastAPI
 - Uvicorn
-- MySQL/MariaDB
+- MySQL/MariaDB/SQLite
 
 ## Installation
 
