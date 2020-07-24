@@ -55,3 +55,7 @@ et visiter l'adresse http://127.0.0.1:8000/ dans le navigateur.
 ## Documentation interactive
 
 FastAPI dispose d'une documentation interactive accessible lorsqu'on crée un projet. Pour le nôtre, on peut y accéder à l'adresse suivante : http://127.0.0.1:8000/docs
+
+## Documentation FastAPI
+
+Pour explorer les possibilités de FastAPI, la documentation complète est disponible sur le site officiel https://fastapi.tiangolo.com/
