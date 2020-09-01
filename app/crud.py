@@ -8,6 +8,9 @@ def get_contact(db: Session, contact_id: int):
 def get_contact_by_email(db: Session, email: str):
     return db.query(models.Contact).filter(models.Contact.email == email).first()
 
+def get_contact_by_id(db: Session, id: int):
+    return db.query(models.Contact).filter(models.Contact.id == id).first()
+
 def get_contacts(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.Contact).offset(skip).limit(limit).all()
 

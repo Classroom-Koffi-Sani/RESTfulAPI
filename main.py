@@ -24,8 +24,10 @@ def read_root():
     return {'Hello': 'World'}
 
 @app.get("/contacts/{contact_id}")
-def read_contact(contact_id: int, q: str = None):
-    return {"contact_id": contact_id, "q": q}
+def read_contact(contact_id: int, q: str = None, db: Session = Depends(get_db)):
+    contact = crud.get_contact_by_id(db, contact_id)
+    #return {"contact_id": contact_id, "q": q}
+    return contact
 
 @app.get("/contacts/", response_model=List[schemas.Contact])
 def read_contacts(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
