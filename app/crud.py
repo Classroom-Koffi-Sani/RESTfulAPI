@@ -25,7 +25,7 @@ def get_companies(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.Company).offset(skip).limit(limit).all()
 
 def create_employee_company(db: Session, employee: schemas.ContactCreate, company_id: int):
-    db_contact = models.Contact(**contact.dict(), company_id=company_id)
+    db_contact = models.Contact(employee.dict(), company_id=company_id)
     db.add(db_contact)
     db.commit()
     db.refresh(db_contact)
